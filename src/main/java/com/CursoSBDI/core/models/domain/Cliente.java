@@ -1,16 +1,20 @@
 package com.CursoSBDI.core.models.domain;
 
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.annotation.RequestScope;
 
 @Component
+@RequestScope
 public class Cliente {
 	
-	@Value("{$cliente.nombre}")
+	@Value("${cliente.nombre}")
 	private String nombre;
 	
-	@Value("{$cliente.apellido}")
+	@Value("${cliente.apellido}")
 	private String apellido;
+	
 	public String getNombre() {
 		return nombre;
 	}
